@@ -1,0 +1,132 @@
+sudo tee /var/www/html/index.html > /dev/null <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spice Garden | Fine Indian Dining</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Georgia, 'Times New Roman', serif; color: #2b2b2b; background: #faf7f2; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Navigation */
+    nav { position: sticky; top: 0; z-index: 10; background: #1c1c1c; display: flex; justify-content: space-between; align-items: center; padding: 14px 6%; }
+    .logo { color: #d4a24c; font-size: 1.4rem; letter-spacing: 2px; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: #eee; font-family: Arial, sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    nav ul a:hover { color: #d4a24c; }
+
+    /* Hero */
+    .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 40px 20px;
+            background: linear-gradient(rgba(20,10,5,0.7), rgba(20,10,5,0.8)), linear-gradient(135deg, #7a2e12, #d4a24c); }
+    .hero h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); letter-spacing: 3px; }
+    .hero p { margin: 14px 0 28px; font-size: 1.2rem; max-width: 560px; color: #f0e3d0; }
+    .btn { display: inline-block; background: #d4a24c; color: #1c1c1c; padding: 12px 30px; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border-radius: 3px; }
+    .btn:hover { background: #e8b960; }
+
+    /* Sections */
+    section { padding: 70px 6%; max-width: 1100px; margin: 0 auto; }
+    h2 { text-align: center; font-size: 2rem; color: #7a2e12; margin-bottom: 8px; }
+    .sub { text-align: center; color: #777; font-family: Arial, sans-serif; margin-bottom: 40px; }
+    .divider { width: 60px; height: 3px; background: #d4a24c; margin: 0 auto 30px; }
+
+    /* About */
+    .about p { max-width: 760px; margin: 0 auto 16px; text-align: center; font-size: 1.05rem; }
+
+    /* Menu */
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .card { background: #fff; padding: 26px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+    .card h3 { color: #7a2e12; border-bottom: 2px solid #d4a24c; padding-bottom: 8px; margin-bottom: 14px; }
+    .dish { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px dotted #ddd; }
+    .dish:last-child { border-bottom: none; }
+    .dish small { display: block; color: #888; font-family: Arial, sans-serif; font-size: 0.8rem; }
+    .price { font-family: Arial, sans-serif; font-weight: bold; color: #7a2e12; white-space: nowrap; }
+
+    /* Hours and contact */
+    .info { background: #1c1c1c; color: #eee; max-width: none; }
+    .info-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; text-align: center; }
+    .info h2 { color: #d4a24c; font-size: 1.4rem; }
+    .info p { font-family: Arial, sans-serif; color: #ccc; }
+
+    footer { text-align: center; padding: 22px; background: #111; color: #888; font-family: Arial, sans-serif; font-size: 0.85rem; }
+
+    @media (max-width: 600px) { nav ul { gap: 14px; } nav ul a { font-size: 0.75rem; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">SPICE GARDEN</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Spice Garden</h1>
+    <p>Authentic Indian flavours, freshly prepared with love and the finest ingredients.</p>
+    <a class="btn" href="#menu">View Our Menu</a>
+  </header>
+
+  <section id="about" class="about">
+    <h2>Our Story</h2>
+    <div class="divider"></div>
+    <p>Spice Garden began with a simple idea: serve the food we grew up eating, made the way it was meant to be made. Every dish is cooked fresh each day using traditional recipes and carefully selected spices.</p>
+    <p>Whether you are joining us for a family dinner, a quick lunch, or a celebration, we promise warm service and unforgettable flavour.</p>
+  </section>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="divider"></div>
+    <p class="sub">Freshly prepared every day</p>
+    <div class="menu-grid">
+      <div class="card">
+        <h3>Starters</h3>
+        <div class="dish"><div>Paneer Tikka<small>Grilled cottage cheese with spices</small></div><span class="price">Rs 220</span></div>
+        <div class="dish"><div>Veg Spring Rolls<small>Crispy rolls with vegetables</small></div><span class="price">Rs 160</span></div>
+        <div class="dish"><div>Chicken 65<small>Spicy fried chicken bites</small></div><span class="price">Rs 250</span></div>
+      </div>
+      <div class="card">
+        <h3>Main Course</h3>
+        <div class="dish"><div>Butter Chicken<small>Creamy tomato gravy</small></div><span class="price">Rs 320</span></div>
+        <div class="dish"><div>Veg Biryani<small>Fragrant rice with vegetables</small></div><span class="price">Rs 240</span></div>
+        <div class="dish"><div>Dal Tadka with Rice<small>Yellow lentils tempered with ghee</small></div><span class="price">Rs 180</span></div>
+      </div>
+      <div class="card">
+        <h3>Desserts and Drinks</h3>
+        <div class="dish"><div>Gulab Jamun<small>Warm milk dumplings in syrup</small></div><span class="price">Rs 90</span></div>
+        <div class="dish"><div>Ice Cream<small>Vanilla, chocolate or mango</small></div><span class="price">Rs 100</span></div>
+        <div class="dish"><div>Masala Chai<small>Spiced Indian tea</small></div><span class="price">Rs 50</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="info">
+    <div class="info-inner">
+      <div>
+        <h2>Opening Hours</h2>
+        <p>Monday to Friday: 11 AM to 11 PM</p>
+        <p>Saturday and Sunday: 10 AM to 12 midnight</p>
+      </div>
+      <div>
+        <h2>Visit Us</h2>
+        <p>12 Garden Road, Hyderabad</p>
+        <p>Telangana, India</p>
+      </div>
+      <div>
+        <h2>Reservations</h2>
+        <p>Phone: +91 90000 00000</p>
+        <p>Email: hello@spicegarden.example</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Spice Garden. A practice project hosted on AWS EC2 with nginx.</footer>
+
+</body>
+</html>
+EOF
